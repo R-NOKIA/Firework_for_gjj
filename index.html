@@ -12,6 +12,7 @@
 </head>
 <body class="loading">
 <!-- SVG SpriteSheet -->
+<audio id="bgm" src="assets/audio/xiaoyu.mp3" loop></audio>
 <div style="height: 0; width: 0; position: absolute; visibility: hidden;">
     <svg xmlns="http://www.w3.org/2000/svg">
         <symbol id="icon-play" viewBox="0 0 24 24">
@@ -193,5 +194,11 @@
 <script src="assets/js/fireworks.js"></script>
 <script src="assets/js/main.js"></script>
 <script defer src="https://analytics.chish.cn/script.js" data-website-id="1e21fb34-f595-4f18-b7ed-d90e4f7f2cca"></script>
+<script>
+document.addEventListener("click", () => {
+  const audio = document.getElementById("bgm");
+  audio.play().catch(err => console.log("播放失败：", err));
+}, { once: true }); // 只触发一次
+</script>
 </body>
 </html>
